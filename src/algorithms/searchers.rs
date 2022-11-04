@@ -1,4 +1,10 @@
 pub mod kmp{
+    pub enum KMPMode {
+        UserInput,
+        FileRead,
+        NoMode
+    }
+
     // KMP ALGORITHM FUNCTION
     pub fn kmp_search(word: &String, pattern: &String){
         if word.is_empty() || pattern.is_empty(){
