@@ -1,10 +1,4 @@
 pub mod kmp{
-    struct KMP {
-        text: String,
-        target: String,
-        found: bool,
-    }
-    
     // KMP ALGORITHM FUNCTION
     pub fn kmp_search(word: &String, pattern: &String){
         if word.is_empty() || pattern.is_empty(){
@@ -48,7 +42,8 @@ pub mod kmp{
         while count < word.len(){
             if jr == pattern.len() - 1{
                 println!("Matching word has been found on character {} up to {}", count - jr + 1, count);
-    
+                println!("Matching Word: {:?}", &word[count - jr .. count]); // Print string slice of matching word
+                
                 return;
             }
     
@@ -69,6 +64,6 @@ pub mod kmp{
             }
         }
     
-        println!("Pattern was not found in the text");
+        eprintln!("Pattern was not found in the text");
     }
 }
